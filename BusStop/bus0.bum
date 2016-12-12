@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.units.mchBase" version="5">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="usersWaiting ≔ ∅" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="usersInside :∣ usersInside' ⊆ USERS ∧ finite (usersInside') ∧ card(usersInside') ≤ CAPACITYMAX" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="userContext0"/>
+<org.eventb.core.seesContext name=")" org.eventb.core.target="busContext0"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="*" org.eventb.core.identifier="usersInside"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="+" org.eventb.core.identifier="usersWaiting"/>
+<org.eventb.core.invariant name="," org.eventb.core.label="defUsersInside" org.eventb.core.predicate="usersInside ⊆ USERS"/>
+<org.eventb.core.invariant name="-" org.eventb.core.label="defUsersWaiting" org.eventb.core.predicate="usersWaiting ⊆ USERS"/>
+<org.eventb.core.invariant name="0" org.eventb.core.label="inv1" org.eventb.core.predicate="finite(usersInside)"/>
+<org.eventb.core.invariant name="." org.eventb.core.label="busOverflowPrevention" org.eventb.core.predicate="card(usersInside) ≤ CAPACITYMAX"/>
+</org.eventb.core.machineFile>
