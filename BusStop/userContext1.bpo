@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.poFile org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poIdentifier name="USERS" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.poIdentifier name="priority" org.eventb.core.type="ℙ(USERS×ℤ)"/>
+</org.eventb.core.poPredicateSet>
+<org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/BusStop/userContext1.bpo|org.eventb.core.poFile#userContext1|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="1">
+<org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="priority∈USERS → ℕ" org.eventb.core.source="/BusStop/userContext1.buc|org.eventb.core.contextFile#userContext1|org.eventb.core.axiom#)"/>
+</org.eventb.core.poPredicateSet>
+</org.eventb.core.poFile>

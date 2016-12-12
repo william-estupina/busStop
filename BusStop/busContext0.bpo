@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.poFile org.eventb.core.poStamp="2">
+<org.eventb.core.poFile org.eventb.core.poStamp="3">
 <org.eventb.core.poPredicateSet name="ABSHYP" org.eventb.core.poStamp="2">
 <org.eventb.core.poIdentifier name="CAPACITYMAX" org.eventb.core.type="ℤ"/>
 </org.eventb.core.poPredicateSet>
+<org.eventb.core.poSequent name="axm1/THM" org.eventb.core.accurate="true" org.eventb.core.poDesc="Theorem" org.eventb.core.poStamp="3">
+<org.eventb.core.poPredicateSet name="SEQHYP" org.eventb.core.parentSet="/BusStop/busContext0.bpo|org.eventb.core.poFile#busContext0|org.eventb.core.poPredicateSet#ABSHYP"/>
+<org.eventb.core.poPredicate name="SEQHYQ" org.eventb.core.predicate="CAPACITYMAX∈ℕ1" org.eventb.core.source="/BusStop/busContext0.buc|org.eventb.core.contextFile#busContext0|org.eventb.core.axiom#("/>
+<org.eventb.core.poSource name="SEQHYR" org.eventb.core.poRole="DEFAULT" org.eventb.core.source="/BusStop/busContext0.buc|org.eventb.core.contextFile#busContext0|org.eventb.core.axiom#("/>
+<org.eventb.core.poSelHint name="SEQHYS" org.eventb.core.poSelHintFst="/BusStop/busContext0.bpo|org.eventb.core.poFile#busContext0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poSelHintSnd="/BusStop/busContext0.bpo|org.eventb.core.poFile#busContext0|org.eventb.core.poPredicateSet#ABSHYP"/>
+</org.eventb.core.poSequent>
 <org.eventb.core.poPredicateSet name="ALLHYP" org.eventb.core.parentSet="/BusStop/busContext0.bpo|org.eventb.core.poFile#busContext0|org.eventb.core.poPredicateSet#ABSHYP" org.eventb.core.poStamp="2">
 <org.eventb.core.poPredicate name="PRD0" org.eventb.core.predicate="CAPACITYMAX∈ℕ1" org.eventb.core.source="/BusStop/busContext0.buc|org.eventb.core.contextFile#busContext0|org.eventb.core.axiom#("/>
 </org.eventb.core.poPredicateSet>

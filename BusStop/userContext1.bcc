@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.scContextFile org.eventb.core.accurate="true" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.symbolic.ctxBase;de.prob.units.mchBase">
+<org.eventb.core.scExtendsContext name="'" org.eventb.core.scTarget="/BusStop/userContext0.bcc|org.eventb.core.scContextFile#userContext0" org.eventb.core.source="/BusStop/userContext1.buc|org.eventb.core.contextFile#userContext1|org.eventb.core.extendsContext#'"/>
+<org.eventb.core.scInternalContext name="userContext0">
+<org.eventb.core.scCarrierSet name="USERS" org.eventb.core.source="/BusStop/userContext0.buc|org.eventb.core.contextFile#userContext0|org.eventb.core.carrierSet#'" org.eventb.core.type="ℙ(USERS)"/>
+</org.eventb.core.scInternalContext>
+<org.eventb.core.scAxiom name="userContext1" org.eventb.core.label="axm1" org.eventb.core.predicate="priority∈USERS → ℕ" org.eventb.core.source="/BusStop/userContext1.buc|org.eventb.core.contextFile#userContext1|org.eventb.core.axiom#)" org.eventb.core.theorem="false"/>
+<org.eventb.core.scConstant de.prob.symbolic.symbolicAttribute="false" de.prob.units.unitPragmaAttribute="" name="priority" org.eventb.core.source="/BusStop/userContext1.buc|org.eventb.core.contextFile#userContext1|org.eventb.core.constant#(" org.eventb.core.type="ℙ(USERS×ℤ)"/>
+</org.eventb.core.scContextFile>

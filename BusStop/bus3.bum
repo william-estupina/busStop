@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.units.mchBase" version="5">
+<org.eventb.core.refinesMachine name="'" org.eventb.core.target="bus2"/>
+<org.eventb.core.seesContext name="(" org.eventb.core.target="userContext1"/>
+<org.eventb.core.seesContext name=")" org.eventb.core.target="busContext0"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="+" org.eventb.core.identifier="usersLeaving"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="0" org.eventb.core.identifier="usersInside"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="1" org.eventb.core.identifier="usersWaiting"/>
+<org.eventb.core.event name="2" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="getIn">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="getIn"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd5" org.eventb.core.predicate="∀ p·p ∈ usersWaiting ∧ priority(u) = priority(p) ⇒ queueNumber(u) ≤ queueNumber(p) "/>
+</org.eventb.core.event>
+<org.eventb.core.event name="3" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="leave">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="leave"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="4" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="wantToLeave">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="wantToLeave"/>
+</org.eventb.core.event>
+<org.eventb.core.event name=":" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="joinQueue">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ USERS ∖ (usersInside ∪ usersWaiting)"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="usersWaiting ≔ usersWaiting ∪ {u}" org.eventb.core.label="act1"/>
+<org.eventb.core.parameter name=")" org.eventb.core.identifier="u"/>
+<org.eventb.core.action name="*" org.eventb.core.assignment="queueNumber(u) ≔ queueCounter" org.eventb.core.label="act2"/>
+<org.eventb.core.action name="+" org.eventb.core.assignment="queueCounter ≔ queueCounter + 1" org.eventb.core.label="act3"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="queueCounter ≔ 1" org.eventb.core.label="act4"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="queueNumber ≔ ∅" org.eventb.core.label="act5"/>
+</org.eventb.core.event>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="6" org.eventb.core.identifier="queueNumber"/>
+<org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="7" org.eventb.core.identifier="queueCounter"/>
+<org.eventb.core.invariant name="8" org.eventb.core.label="inv1" org.eventb.core.predicate="queueCounter ∈ ℕ1"/>
+<org.eventb.core.invariant name="9" org.eventb.core.label="inv2" org.eventb.core.predicate="queueNumber ∈ usersWaiting → ℕ1"/>
+</org.eventb.core.machineFile>
