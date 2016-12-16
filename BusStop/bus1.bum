@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.units.mchBase" version="5">
+<org.eventb.core.machineFile org.eventb.core.comment="In this refinement, getting in the bus while people still wants to leave is forbidden" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.units.mchBase" version="5">
 <org.eventb.core.refinesMachine name="'" org.eventb.core.target="bus0"/>
 <org.eventb.core.seesContext name="(" org.eventb.core.target="userContext0"/>
 <org.eventb.core.seesContext name=")" org.eventb.core.target="busContext0"/>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="+" org.eventb.core.identifier="usersLeaving"/>
-<org.eventb.core.event name="-" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="getIn">
+<org.eventb.core.event name="-" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="getIn">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="getIn"/>
-<org.eventb.core.guard name="internal3" org.eventb.core.label="grd1" org.eventb.core.predicate="card(usersInside) &lt; CAPACITYMAX"/>
 <org.eventb.core.guard name="internal4" org.eventb.core.label="grd3" org.eventb.core.predicate="usersLeaving = ∅"/>
-<org.eventb.core.guard name="internal1" org.eventb.core.label="grd2" org.eventb.core.predicate="u ∈ usersWaiting"/>
-<org.eventb.core.parameter name=")" org.eventb.core.identifier="u"/>
-<org.eventb.core.action name="*" org.eventb.core.assignment="usersInside ≔ usersInside ∪ {u}" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="," org.eventb.core.assignment="usersWaiting ≔ usersWaiting ∖ {u}" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="leave">
+<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="leave">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="leave"/>
-<org.eventb.core.parameter name="(" org.eventb.core.identifier="u"/>
-<org.eventb.core.guard name=")" org.eventb.core.label="grd2" org.eventb.core.predicate="u ∈ usersLeaving"/>
-<org.eventb.core.action name="*" org.eventb.core.assignment="usersInside ≔ usersInside ∖ {u}" org.eventb.core.label="act1"/>
+<org.eventb.core.guard name=")" org.eventb.core.label="grd3" org.eventb.core.predicate="u ∈ usersLeaving"/>
 <org.eventb.core.action name="+" org.eventb.core.assignment="usersLeaving ≔ usersLeaving ∖ {u}" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="3" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="wantToLeave">
@@ -25,12 +18,13 @@
 <org.eventb.core.guard name="(" org.eventb.core.label="grd1" org.eventb.core.predicate="u ∈ usersInside ∖ usersLeaving"/>
 <org.eventb.core.parameter name=")" org.eventb.core.identifier="u"/>
 </org.eventb.core.event>
-<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
-<org.eventb.core.action name="internal1" org.eventb.core.assignment="usersWaiting ≔ ∅" org.eventb.core.label="act1"/>
-<org.eventb.core.action name="(" org.eventb.core.assignment="usersInside :∣ usersInside' ⊆ USERS ∧ finite (usersInside') ∧ card(usersInside') ≤ CAPACITYMAX" org.eventb.core.label="act2"/>
+<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="'" org.eventb.core.assignment="usersLeaving ≔ ∅" org.eventb.core.label="act3"/>
 </org.eventb.core.event>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="0" org.eventb.core.identifier="usersInside"/>
 <org.eventb.core.variable de.prob.units.inferredUnitPragmaAttribute="" de.prob.units.unitPragmaAttribute="" name="1" org.eventb.core.identifier="usersWaiting"/>
 <org.eventb.core.invariant name="2" org.eventb.core.label="inv1" org.eventb.core.predicate="usersLeaving ⊆ usersInside"/>
+<org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="joinQueue">
+<org.eventb.core.refinesEvent name="*" org.eventb.core.target="joinQueue"/>
+</org.eventb.core.event>
 </org.eventb.core.machineFile>

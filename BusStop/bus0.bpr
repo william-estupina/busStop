@@ -375,4 +375,30 @@
 <org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.autoRewritesL4:0"/>
 <org.eventb.core.prReas name="r2" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
 </org.eventb.core.prProof>
+<org.eventb.core.prProof name="joinQueue/inv2/INV" org.eventb.core.confidence="1000" org.eventb.core.prFresh="" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p1,p2,p3,p4,p5" org.eventb.core.prSets="USERS">
+<org.eventb.core.lang name="L"/>
+<org.eventb.core.prRule name="r0" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="type rewrites" org.eventb.core.prHyps="">
+<org.eventb.core.prAnte name="'">
+<org.eventb.core.prHypAction name="HIDE0" org.eventb.core.prHyps="p6"/>
+<org.eventb.core.prHypAction name="HIDE1" org.eventb.core.prHyps="p7"/>
+<org.eventb.core.prRule name="r1" org.eventb.core.confidence="1000" org.eventb.core.prDisplay="ML" org.eventb.core.prGoal="p0" org.eventb.core.prHyps="p3,p1,p2,p5,p4">
+<org.eventb.core.prString name=".arg" org.eventb.core.prSValue="0;1:500"/>
+</org.eventb.core.prRule>
+</org.eventb.core.prAnte>
+</org.eventb.core.prRule>
+<org.eventb.core.prIdent name="CAPACITYMAX" org.eventb.core.type="ℤ"/>
+<org.eventb.core.prIdent name="u" org.eventb.core.type="USERS"/>
+<org.eventb.core.prIdent name="usersInside" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prIdent name="usersWaiting" org.eventb.core.type="ℙ(USERS)"/>
+<org.eventb.core.prPred name="p1" org.eventb.core.predicate="finite(usersInside)"/>
+<org.eventb.core.prPred name="p2" org.eventb.core.predicate="card(usersInside)≤CAPACITYMAX"/>
+<org.eventb.core.prPred name="p7" org.eventb.core.predicate="usersWaiting⊆USERS"/>
+<org.eventb.core.prPred name="p0" org.eventb.core.predicate="usersInside∩(usersWaiting∪{u})=(∅ ⦂ ℙ(USERS))"/>
+<org.eventb.core.prPred name="p3" org.eventb.core.predicate="CAPACITYMAX∈ℕ1"/>
+<org.eventb.core.prPred name="p4" org.eventb.core.predicate="u∈USERS ∖ (usersWaiting∪usersInside)"/>
+<org.eventb.core.prPred name="p6" org.eventb.core.predicate="usersInside⊆USERS"/>
+<org.eventb.core.prPred name="p5" org.eventb.core.predicate="usersInside∩usersWaiting=(∅ ⦂ ℙ(USERS))"/>
+<org.eventb.core.prReas name="r1" org.eventb.core.prRID="com.clearsy.atelierb.provers.core.externalML:1"/>
+<org.eventb.core.prReas name="r0" org.eventb.core.prRID="org.eventb.core.seqprover.typeRewrites:1"/>
+</org.eventb.core.prProof>
 </org.eventb.core.prFile>

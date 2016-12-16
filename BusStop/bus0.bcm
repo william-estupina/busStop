@@ -32,4 +32,9 @@
 <org.eventb.core.scParameter name="u" org.eventb.core.source="/BusStop/bus0.bum|org.eventb.core.machineFile#bus0|org.eventb.core.event#2|org.eventb.core.parameter#(" org.eventb.core.type="USERS"/>
 <org.eventb.core.scAction name="v" org.eventb.core.assignment="usersInside ≔ usersInside ∖ {u}" org.eventb.core.label="act1" org.eventb.core.source="/BusStop/bus0.bum|org.eventb.core.machineFile#bus0|org.eventb.core.event#2|org.eventb.core.action#*"/>
 </org.eventb.core.scEvent>
+<org.eventb.core.scEvent name="usersWaitink" org.eventb.core.accurate="true" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="joinQueue" org.eventb.core.source="/BusStop/bus0.bum|org.eventb.core.machineFile#bus0|org.eventb.core.event#4">
+<org.eventb.core.scGuard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="u∈USERS ∖ (usersWaiting∪usersInside)" org.eventb.core.source="/BusStop/bus0.bum|org.eventb.core.machineFile#bus0|org.eventb.core.event#4|org.eventb.core.guard#'" org.eventb.core.theorem="false"/>
+<org.eventb.core.scParameter name="u" org.eventb.core.source="/BusStop/bus0.bum|org.eventb.core.machineFile#bus0|org.eventb.core.event#4|org.eventb.core.parameter#(" org.eventb.core.type="USERS"/>
+<org.eventb.core.scAction name="v" org.eventb.core.assignment="usersWaiting ≔ usersWaiting∪{u}" org.eventb.core.label="act1" org.eventb.core.source="/BusStop/bus0.bum|org.eventb.core.machineFile#bus0|org.eventb.core.event#4|org.eventb.core.action#)"/>
+</org.eventb.core.scEvent>
 </org.eventb.core.scMachineFile>

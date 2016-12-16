@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd;de.prob.units.mchBase" version="5">
+<org.eventb.core.machineFile org.eventb.core.comment="In this refinement, the priority over passengers that wants to get in is taken into account" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.units.mchBase" version="5">
 <org.eventb.core.refinesMachine name="'" org.eventb.core.target="bus1"/>
 <org.eventb.core.seesContext name="(" org.eventb.core.target="userContext1"/>
 <org.eventb.core.seesContext name=")" org.eventb.core.target="busContext0"/>
@@ -17,4 +17,7 @@
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="wantToLeave"/>
 </org.eventb.core.event>
 <org.eventb.core.event name="5" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION"/>
+<org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="joinQueue">
+<org.eventb.core.refinesEvent name="'" org.eventb.core.target="joinQueue"/>
+</org.eventb.core.event>
 </org.eventb.core.machineFile>
