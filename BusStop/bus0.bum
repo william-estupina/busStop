@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <org.eventb.core.machineFile org.eventb.core.comment="First bus: only handle the basics effects of a bus without priorities" org.eventb.core.configuration="org.eventb.core.fwd;de.prob.units.mchBase" version="5">
-<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="INITIALISATION">
 <org.eventb.core.action name="'" org.eventb.core.assignment="usersWaiting ≔ ∅" org.eventb.core.label="act1"/>
 <org.eventb.core.action name="(" org.eventb.core.assignment="usersInside :∣ usersInside' ⊆ USERS ∧ finite (usersInside') ∧ card(usersInside') ≤ CAPACITYMAX" org.eventb.core.label="act2"/>
 </org.eventb.core.event>
@@ -30,7 +30,5 @@
 <org.eventb.core.parameter name="(" org.eventb.core.identifier="u"/>
 <org.eventb.core.action name=")" org.eventb.core.assignment="usersWaiting ≔ usersWaiting ∪ {u}" org.eventb.core.label="act1"/>
 </org.eventb.core.event>
-<org.eventb.core.invariant name="5" org.eventb.core.label="DLF1" org.eventb.core.predicate="usersWaiting ≠ ∅ ∧ card(usersInside) &lt; CAPACITYMAX ⇒ (∃ u·card(usersInside) &lt; CAPACITYMAX ∧ u ∈ usersWaiting)"/>
-<org.eventb.core.invariant name="6" org.eventb.core.label="DLF2" org.eventb.core.predicate="card(usersInside) = CAPACITYMAX ⇒ (∃ u· (u ∈ usersInside) ∨ (u ∈ USERS ∖ (usersWaiting ∪ usersInside)))"/>
-<org.eventb.core.invariant name="7" org.eventb.core.label="DLF" org.eventb.core.predicate="∃u·((card(usersInside) &lt; CAPACITYMAX) ∧ (u ∈ usersWaiting)) ∨ (u ∈ usersInside) ∨ (u ∈ USERS ∖ (usersWaiting ∪ usersInside))" org.eventb.core.theorem="true"/>
+<org.eventb.core.invariant name="8" org.eventb.core.label="DLF" org.eventb.core.predicate="((card(usersInside) &lt; CAPACITYMAX) ∧ (∃u·u ∈ usersWaiting)) ∨ (∃u·u ∈ usersInside) ∨ (∃u·u ∈ USERS ∖ (usersWaiting ∪ usersInside))" org.eventb.core.theorem="true"/>
 </org.eventb.core.machineFile>
