@@ -20,4 +20,6 @@
 <org.eventb.core.event name="6" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="joinQueue">
 <org.eventb.core.refinesEvent name="'" org.eventb.core.target="joinQueue"/>
 </org.eventb.core.event>
+<org.eventb.core.invariant name="7" org.eventb.core.label="inv1" org.eventb.core.predicate="finite(usersWaiting)"/>
+<org.eventb.core.invariant name="8" org.eventb.core.label="DLF" org.eventb.core.predicate="usersWaiting ≠ ∅ ⇒ (∃u·(u∈usersWaiting ∧ (∀x·x∈usersWaiting ⇒ priority(u) ≥ priority(x))))" org.eventb.core.theorem="true"/>
 </org.eventb.core.machineFile>

@@ -27,4 +27,6 @@
 <org.eventb.core.event name="evt1" org.eventb.core.convergence="0" org.eventb.core.extended="true" org.eventb.core.label="joinQueue">
 <org.eventb.core.refinesEvent name="*" org.eventb.core.target="joinQueue"/>
 </org.eventb.core.event>
+<org.eventb.core.invariant name="evt2" org.eventb.core.label="DLF1" org.eventb.core.predicate="usersLeaving ≠ ∅ ⇒ ((∃u·u ∈ usersInside ∧ u ∈ usersLeaving) ∨ (∃u·u ∈ usersInside ∖ usersLeaving) ∨ (∃u·u ∈ USERS ∖ (usersWaiting ∪ usersInside)))" org.eventb.core.theorem="true"/>
+<org.eventb.core.invariant name="evt3" org.eventb.core.label="DLF2" org.eventb.core.predicate="usersLeaving = ∅ ⇒ ((card(usersInside) &lt; CAPACITYMAX ∧ usersLeaving = ∅ ∧ ∃u·u ∈ usersWaiting) ∨ (∃u·u ∈ usersInside ∖ usersLeaving) ∨ (∃u·u ∈ USERS ∖ (usersWaiting ∪ usersInside)))" org.eventb.core.theorem="true"/>
 </org.eventb.core.machineFile>
